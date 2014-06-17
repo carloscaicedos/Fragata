@@ -234,6 +234,45 @@ namespace Fragata
                     runScript("selectOption", args);
 
                     break;
+                case "changeArtist":
+                    args = new object[2];
+                    args[0] = optionNode.Attributes["id"].InnerText;
+
+                    messageNodes = optionNode.SelectNodes(".//message[@type='alt_goodbye']");
+                    message_alt = textToSpeech(messageNodes[rnd.Next(messageNodes.Count)].InnerText.Replace("{welcome_greeting}", getWelcomeGreeting()));
+                    
+                    script = @"(function () {
+                                    speakSophia('" + message + @"', function () {
+                                        showArtists(function () {
+                                            window.external.startRecognition(true);
+                                            $('.micOff').addClass('micOn').removeClass('micOff');
+                                            $('#tone')[0].play();
+                                            window.external.restartTimerIdle();
+                                        });
+                                    }); 
+                                })";
+                    args[1] = runScript("eval", new object[1] { script });
+
+                    runScript("selectOption", args);
+
+                    break;
+                case "selectArtist":
+                    args = new object[2];
+                    args[0] = optionNode.Attributes["id"].InnerText;
+
+                    script = @"(function () {
+                                    speakSophia('" + message + @"', function () {
+                                        openDoors(false, function () {
+                                            window.external.startRecognition(true);
+                                            showArt(true);
+                                        });
+                                    }); 
+                                })";
+                    args[1] = runScript("eval", new object[1] { script });
+
+                    runScript("selectArtist", args);
+
+                    break;
                 case "showSchedule":
                     args = new object[2];
                     args[0] = optionNode.Attributes["id"].InnerText;
@@ -347,13 +386,13 @@ namespace Fragata
                     args = new object[4];
 
                     script = @"(function () {
-                                        setTimeout(function () {
-                                            showSophia(false,function () {
-                                                openDoors(false, function () {
-                                                    window.external.startRecognition(true)
-                                                });
+                                    setTimeout(function () {
+                                        showSophia(false,function () {
+                                            openDoors(false, function () {
+                                                window.external.startRecognition(true)
                                             });
-                                        }, 5000);
+                                        });
+                                    }, 5000);
                                 })";
                     messageNodes = optionNode.SelectNodes(".//message[@type='alt_goodbye']");
                     message_alt = textToSpeech(messageNodes[rnd.Next(messageNodes.Count)].InnerText.Replace("{welcome_greeting}", getWelcomeGreeting()));
