@@ -259,12 +259,17 @@ namespace Fragata
                 case "selectArtist":
                     args = new object[2];
                     args[0] = optionNode.Attributes["id"].InnerText;
-
+                    
                     script = @"(function () {
                                     speakSophia('" + message + @"', function () {
                                         openDoors(false, function () {
                                             window.external.startRecognition(true);
-                                            showArt(true);
+                                            getPicture(function (urlImage, idImage) {
+                                                $(document.body).css('background-image', 'url(""' + urlImage + '"")');
+                                                $('#picture').fadeTo(500, 0, function () {
+                                                    $(this).css('background-image', 'url(""' + urlImage + '"")');
+                                                }).fadeTo(500, 1);
+                                            })
                                         });
                                     }); 
                                 })";

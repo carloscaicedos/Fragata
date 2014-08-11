@@ -8,6 +8,13 @@ Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Installer", "Installer\Inst
 		{3E8B19EF-8D14-4644-B7E1-5F65CC256216} = {3E8B19EF-8D14-4644-B7E1-5F65CC256216}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragataLite", "FragataLite\FragataLite.csproj", "{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}"
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "InstallerLite", "InstallerLite\InstallerLite.isproj", "{70F626C1-558A-4205-95DD-19BE56AF5F32}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A} = {5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -37,6 +44,26 @@ Global
 		{A430DE7A-4708-4242-8807-174BD0BDCA45}.Release|Any CPU.Build.0 = SingleImage
 		{A430DE7A-4708-4242-8807-174BD0BDCA45}.SingleImage|Any CPU.ActiveCfg = SingleImage
 		{A430DE7A-4708-4242-8807-174BD0BDCA45}.SingleImage|Any CPU.Build.0 = SingleImage
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF8E31D-EC30-4BFD-80A5-B8C8859A973A}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.Debug|Any CPU.ActiveCfg = SingleImage
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.Debug|Any CPU.Build.0 = SingleImage
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.DVD-5|Any CPU.Build.0 = DVD-5
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.Release|Any CPU.ActiveCfg = SingleImage
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.Release|Any CPU.Build.0 = SingleImage
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{70F626C1-558A-4205-95DD-19BE56AF5F32}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
