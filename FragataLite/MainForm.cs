@@ -294,7 +294,20 @@ namespace FragataLite
                     returnRecognition(returnMethod, new object[3] { e.Result.Text, e.Result.Grammar.Name, e.Result.Confidence });
                 }
                 else
-                {
+                {                    
+                    switch (e.Result.Text)
+                    {
+                        case "Cerrar aplicación":
+                            this.Close();
+                            break;
+                        case "Modo pantalla completa":
+                            browser_Fullscreen();
+                            break;
+                        case "Recargar página":
+                            browser.Refresh(WebBrowserRefreshOption.Completely);
+                            break;
+                    }
+
                     Console.WriteLine(e.Result.Text);
                 }
             }
@@ -330,7 +343,7 @@ namespace FragataLite
         
         public void initRecognizer(string callback)
         {
-            string[] commands = { "Cerrar fragata", "Modo pantalla completa", "Recargar página" };
+            string[] commands = { "Cerrar aplicación", "Modo pantalla completa", "Recargar página" };
             GrammarBuilder gb = new GrammarBuilder(new Choices(commands));
             gb.Culture = new CultureInfo("es-MX");
 
